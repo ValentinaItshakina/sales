@@ -12,11 +12,30 @@
 
 
 ## Инструкия по сборке
-Нажмите Ctrl+Shift+P, выберите CMake: Configure.
+```
+cmake_minimum_required(VERSION 3.10)
 
-Выберите компилятор (g++).
+project(SALES VERSION 1.0 LANGUAGES CXX)
 
-Соберите проект (F7 или CMake: Build).
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(SOURCES
+    src/main.cpp
+    src/Product.cpp
+    src/Warehouse.cpp
+)
+
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+target_include_directories(${PROJECT_NAME} PUBLIC include)
+
+if(MSVC)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4)
+else()
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
+endif()
+```
 
 
 ## Описание классов и их методов
@@ -73,6 +92,8 @@
 | `==` | `bool operator==(const Product& other) const` | Сравнивает товары (вероятно, по ID) |
 | `<<` | `friend std::ostream& operator<<(std::ostream& os, const Product& product)` | Выводит товар в поток |
 
+
+
 ## Пример работы программы
 
 ## Проблемы и решения
@@ -88,4 +109,3 @@ You don't have permissions to push to "ValentinaItshakina/sales" on GitHub.
 3. Изменить remote URL на свой репозиторий
 
 **Выбрано решение:**  Запросить доступ у владельца репозитория (ValentinaItshakina)
-
