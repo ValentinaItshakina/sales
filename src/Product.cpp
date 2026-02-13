@@ -42,23 +42,17 @@ void Product::restock(int quantity) {
     quantityInStock += quantity;
 }
 
-bool Product::sell(int quantity) {
-    if (quantity <= 0) {
+void Product::sell(int quantity) {
+    if (quantity <= 0){
         throw std::invalid_argument("Sell quantity must be positive");
     }
     if (quantityInStock >= quantity) {
         quantityInStock -= quantity;
-        return true;
     }
-    return false; // Недостаточно товара
 }
 
 bool Product::isAvailable() const {
     return quantityInStock > 0;
-}
-
-bool Product::isValidPrice(double price) {
-    return price >= 0.0;
 }
 
 void Product::print() const {

@@ -5,16 +5,11 @@
 
 class Warehouse {
 private:
-    std::vector<std::string, Product> catalog; // productId -> Product
-
+    std::vector<Product> catalog;
 public:
     Warehouse() = default;
 
-    bool addProduct(const Product& product);
+    void addProduct(const Product& product);
     Product* findProduct(const std::string& productId);
     void generateInventoryReport() const;
-
-    bool sellProduct(const std::string& productId, int quantity);
-    bool restockProduct(const std::string& productId, int quantity);
-    size_t getProductCount() const { return catalog.size(); }
 };

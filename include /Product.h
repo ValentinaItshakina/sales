@@ -25,10 +25,8 @@ public:
     void setQuantityInStock(int quantity);
 
     void restock(int quantity);
-    bool sell(int quantity);
+    void sell(int quantity);
     bool isAvailable() const;
-
-    static bool isValidPrice(double price);
 
     void print() const;
 
