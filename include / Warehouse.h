@@ -4,8 +4,8 @@
 #include "Product.h"
 
 class Warehouse {
-private:
     std::vector<Product> catalog;
+
 public:
     Warehouse() = default;
 
