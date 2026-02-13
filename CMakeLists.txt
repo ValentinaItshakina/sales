@@ -12,12 +12,12 @@ add_executable(${PROJECT_NAME}
 
     main.cpp
 
-    src/Class1.cpp
+    src/Product.cpp
 
-    src/Class2.cpp
+    src/Warehouse.cpp
 
-    include/Class1.h
+    include/Product.h
 
-    include/Class2.h
+    include/Warehouse.h
 
 )
