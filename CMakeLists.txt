@@ -10,7 +10,7 @@ include_directories(include)
 
 add_executable(${PROJECT_NAME}
 
-    main.cpp
+    src/main.cpp
 
     src/Product.cpp
 
